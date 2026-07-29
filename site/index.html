@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="행정안전부 재난·안전 보도자료 아카이브" />
+  <title>재난·안전 보도자료 | 행정안전부</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">MINISTRY OF THE INTERIOR AND SAFETY</p>
+      <h1>재난·안전 보도자료</h1>
+      <p>재난과 안전 관련 보도자료를 부서별로 한눈에 확인합니다.</p>
+    </header>
+
+    <section class="archive" aria-labelledby="archive-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="archive-heading">보도자료 목록</h2>
+          <p id="result-count" aria-live="polite">불러오는 중</p>
+        </div>
+        <label class="search-box" for="search">
+          <span class="sr-only">제목 또는 부서 검색</span>
+          <input id="search" type="search" placeholder="제목 또는 부서 검색" autocomplete="off" />
+        </label>
+      </div>
+      <div id="cards" class="cards" aria-live="polite"></div>
+      <p id="empty" class="empty" hidden>검색 조건에 맞는 보도자료가 없습니다.</p>
+    </section>
+
+    <section class="summary" aria-labelledby="summary-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="summary-heading">부서별 집계</h2>
+          <p>Google Sheets 게시용 주소를 설정하면 아래에 시트가 표시됩니다.</p>
+        </div>
+        <a class="sheet-link" href="data/department-summary.csv" download>집계 CSV 내려받기</a>
+      </div>
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRhFTSls6-i8TWtJeTbM90tFk0UHZ6JyXizjSzA86_Z9IdnPxq-mTQpnQe2Gj68_PFzxt8xbHqpZvNI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+      <div id="sheet-placeholder" class="sheet-placeholder">
+        <p>Google Sheets 임베드 준비 중</p>
+        <span>site/app.js의 GOOGLE_SHEETS_EMBED_URL에 게시용 URL을 입력하세요.</span>
+      </div>
+      <iframe id="sheet-frame" title="보도자료 부서별 집계" hidden loading="lazy"></iframe>
+    </section>
+  </main>
+  <footer>행정안전부 인재개발실 · 재난·안전 보도자료 아카이브</footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
